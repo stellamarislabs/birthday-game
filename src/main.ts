@@ -2,17 +2,28 @@ import Phaser from "phaser";
 import { gameConfig } from "./game/config";
 import { getAudioManager, installAudioGestureUnlock, installButtonClickAudio } from "./game/systems/AudioManager";
 import { SaveManager } from "./game/systems/SaveManager";
+import { initPwaOnboarding } from "./ui/pwaOnboarding";
 import { APP_VIEWPORT_RESIZE_EVENT, initResponsiveShell } from "./ui/responsive";
 import { isDevMode } from "./utils/isDevMode";
 import "./style.css";
 
 initResponsiveShell();
 
+function registerServiceWorker(): void {
+  if (import.meta.env.DEV || !("serviceWorker" in navigator) || !window.isSecureContext) {
+    return;
+  }
+
+  navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => undefined);
+}
+
 window.addEventListener("load", () => {
   const saveManager = new SaveManager();
   getAudioManager().setMuted(saveManager.load().muted);
   installAudioGestureUnlock();
   installButtonClickAudio();
+  registerServiceWorker();
+  initPwaOnboarding();
 
   const game = new Phaser.Game(gameConfig);
   let pendingScaleRefresh: number | undefined;

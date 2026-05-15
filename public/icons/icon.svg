@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Maria and the Case of the Missing Heart">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="38%" r="62%">
+      <stop offset="0" stop-color="#7d2b40"/>
+      <stop offset="0.58" stop-color="#11182a"/>
+      <stop offset="1" stop-color="#080b16"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f1d58c"/>
+      <stop offset="0.5" stop-color="#d8ad5c"/>
+      <stop offset="1" stop-color="#8f6734"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff4d8"/>
+      <stop offset="1" stop-color="#d8c4a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#glow)"/>
+  <rect x="64" y="64" width="384" height="384" rx="70" fill="none" stroke="url(#gold)" stroke-width="14"/>
+  <rect x="98" y="104" width="316" height="292" rx="24" fill="#201326" stroke="#d8ad5c" stroke-width="8"/>
+  <path d="M122 146h268v214H122z" fill="url(#paper)" opacity=".93"/>
+  <path d="M122 146h268v48H122z" fill="#5b1d2d" opacity=".94"/>
+  <path d="M170 246c0-33 40-48 64-22l22 24 22-24c24-26 64-11 64 22 0 51-86 96-86 96s-86-45-86-96z" fill="#7d1f35" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M176 178h160" stroke="#d8ad5c" stroke-width="10" stroke-linecap="round"/>
+  <path d="M176 374h160" stroke="#8f6734" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  <circle cx="368" cy="374" r="19" fill="url(#gold)"/>
+  <path d="M368 354v40M348 374h40" stroke="#201326" stroke-width="6" stroke-linecap="round"/>
+</svg>

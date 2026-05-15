@@ -1,5 +1,11 @@
 # Changelog
 
+## Part 58A - PWA install support and mobile best-experience hint
+
+- Added a web app manifest, install icons, game-page PWA metadata, and a minimal production-only service worker so Android can install the game as an app-like experience.
+- Added a mobile/touch-only Home Screen onboarding hint with standalone/fullscreen detection and persistent dismissal.
+- Kept `video.html` standalone without the game manifest link, rotate overlay, Phaser boot, or local video caching.
+
 ## Part 57A - Real mobile browser viewport sizing
 
 - Updated the app shell viewport helper to prefer `visualViewport.width` and `visualViewport.height`, publish `--app-width` / `--app-height`, and refresh on browser chrome, orientation, visibility, and viewport scroll changes.
