@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   FINAL_VERDICT_FINAL_ASSET_FILENAME,
@@ -5,6 +6,8 @@ import {
 } from "../game/assets/finalVerdictAssets";
 import { createFinalVerdictDocumentMarkup } from "../game/scenes/finalVerdictSceneMarkup";
 import { storyContent } from "../content/story";
+
+const EVIDENCE_DOMAIN = "https://evidence.stellamarislabs.net";
 
 describe("FinalVerdictScene image-backed verdict support", () => {
   it("maps the optional final verdict image asset without requiring it", () => {
@@ -72,5 +75,15 @@ and one person who will keep choosing you.
 
 Happy birthday, Maria.
 I love you.`);
+  });
+
+  it("targets the standalone Evidence of Love domain instead of local video.html", () => {
+    const sceneSource = readFileSync("src/game/scenes/FinalVerdictScene.ts", "utf8");
+
+    expect(sceneSource).toContain(`const EVIDENCE_OF_LOVE_URL = "${EVIDENCE_DOMAIN}";`);
+    expect(sceneSource).toContain("window.location.href = evidenceOfLoveUrl;");
+    expect(sceneSource).toContain("stopOpeningMainMenuMusic(getAudioManager());");
+    expect(sceneSource).not.toContain('resolvePublicAssetPath("video.html")');
+    expect(sceneSource).not.toContain('"/video.html"');
   });
 });

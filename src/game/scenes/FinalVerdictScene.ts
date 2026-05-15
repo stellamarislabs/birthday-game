@@ -4,13 +4,14 @@ import { renderUiIcon } from "../../ui/icons";
 import { setSceneStatus } from "../../ui/sceneStatus";
 import { PHASER_THEME } from "../../ui/theme";
 import { getFinalVerdictFinalAsset } from "../assets/finalVerdictAssets";
-import { resolvePublicAssetPath } from "../assets/publicAssetPaths";
 import { requestOpeningMainMenuMusic, stopOpeningMainMenuMusic } from "../audio/openingMainMenuMusic";
 import { GAME_WIDTH } from "../config";
 import { drawNonVnPresentationShell } from "../presentation/presentationShell";
 import { getAudioManager } from "../systems/AudioManager";
 import { SaveManager } from "../systems/SaveManager";
 import { createFinalVerdictDocumentMarkup, escapeAttribute } from "./finalVerdictSceneMarkup";
+
+const EVIDENCE_OF_LOVE_URL = "https://evidence.stellamarislabs.net";
 
 export class FinalVerdictScene extends Phaser.Scene {
   private root: HTMLDivElement | null = null;
@@ -70,7 +71,7 @@ export class FinalVerdictScene extends Phaser.Scene {
       return;
     }
 
-    const evidenceOfLoveUrl = resolvePublicAssetPath("video.html");
+    const evidenceOfLoveUrl = EVIDENCE_OF_LOVE_URL;
 
     this.root.innerHTML = `
       <section class="menu-panel final-verdict-panel final-verdict-panel--complete final-verdict-panel--bonus" aria-label="Evidence of Love unlocked" data-testid="evidence-love-unlocked">

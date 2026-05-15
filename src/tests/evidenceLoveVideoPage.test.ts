@@ -1,6 +1,5 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { resolvePublicAssetPath } from "../game/assets/publicAssetPaths";
 
 const VIDEO_PAGE_PATH = "public/video.html";
 const VIDEO_CONFIG_PATH = "public/video-config.js";
@@ -67,8 +66,11 @@ describe("Evidence of Love video page", () => {
     expect(html).toContain("request.catch(showFullscreenHint)");
   });
 
-  it("keeps the final verdict button target base-path safe", () => {
-    expect(resolvePublicAssetPath("video.html", "/missing-heart/")).toBe("/missing-heart/video.html");
-    expect(resolvePublicAssetPath("video.html", "./")).toBe("./video.html");
+  it("remains a local fallback page without changing the in-game external handoff", () => {
+    const html = readFileSync(VIDEO_PAGE_PATH, "utf8");
+
+    expect(html).toContain("<script src=\"video-config.js\"></script>");
+    expect(html).toContain("href=\"index.html\"");
+    expect(html).not.toContain("https://evidence.stellamarislabs.net");
   });
 });

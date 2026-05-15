@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Evidence of Love - the final birthday file for Maria."
+    />
+    <title>Evidence of Love</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink-deep: #080b16;
+        --ink: #11182a;
+        --navy: #141a2e;
+        --burgundy: #5b1d2d;
+        --burgundy-deep: #30101d;
+        --paper: #f5ead2;
+        --paper-soft: #d8c4a1;
+        --gold: #d8ad5c;
+        --gold-soft: #9f7840;
+        --rose: #b66a78;
+        --shadow: rgba(0, 0, 0, 0.55);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100dvh;
+        padding: max(18px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 12%, color-mix(in oklch, var(--gold) 18%, transparent), transparent 30rem),
+          radial-gradient(circle at 18% 82%, color-mix(in oklch, var(--rose) 18%, transparent), transparent 24rem),
+          linear-gradient(135deg, var(--ink-deep), var(--navy) 45%, var(--burgundy-deep));
+        color: var(--paper);
+        font-family: Georgia, "Palatino Linotype", "Times New Roman", serif;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 18px;
+        pointer-events: none;
+        border: 1px solid color-mix(in oklch, var(--gold) 20%, transparent);
+        border-radius: 14px;
+      }
+
+      body::after {
+        inset: 34px;
+        border-color: color-mix(in oklch, var(--gold) 10%, transparent);
+        background:
+          linear-gradient(90deg, color-mix(in oklch, var(--gold) 6%, transparent) 0 1px, transparent 1px 54px),
+          linear-gradient(0deg, color-mix(in oklch, var(--gold) 5%, transparent) 0 1px, transparent 1px 54px);
+        mask-image: radial-gradient(circle at center, black, transparent 72%);
+        opacity: 0.55;
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, min(44vw, 420px));
+        gap: clamp(18px, 4vw, 46px);
+        align-items: center;
+        width: min(1060px, 100%);
+      }
+
+      .case-copy {
+        display: grid;
+        gap: clamp(10px, 2.2vw, 18px);
+        max-width: 34rem;
+      }
+
+      .kicker {
+        margin: 0;
+        color: color-mix(in oklch, var(--gold) 86%, var(--paper));
+        font-size: clamp(0.72rem, 1.8vw, 0.86rem);
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--paper);
+        font-size: clamp(2.45rem, 8vw, 5.2rem);
+        line-height: 0.95;
+        text-wrap: balance;
+        text-shadow:
+          0 2px 18px var(--shadow),
+          0 0 34px color-mix(in oklch, var(--gold) 18%, transparent);
+      }
+
+      .intro,
+      .orientation-note,
+      .missing-video {
+        margin: 0;
+        color: color-mix(in oklch, var(--paper) 88%, var(--paper-soft));
+        font-size: clamp(1rem, 2.8vw, 1.22rem);
+        line-height: 1.45;
+      }
+
+      .orientation-note {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        width: min(100%, 30rem);
+        padding: 12px 14px;
+        border: 1px solid color-mix(in oklch, var(--gold) 58%, transparent);
+        border-radius: 12px;
+        background:
+          linear-gradient(135deg, color-mix(in oklch, var(--paper) 18%, transparent), transparent 46%),
+          color-mix(in oklch, var(--burgundy-deep) 54%, var(--ink));
+        box-shadow:
+          0 14px 30px color-mix(in oklch, black 34%, transparent),
+          0 0 28px color-mix(in oklch, var(--gold) 18%, transparent),
+          inset 0 1px 0 color-mix(in oklch, var(--paper) 16%, transparent);
+        text-align: left;
+      }
+
+      .orientation-note::before {
+        content: "";
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 48px;
+        border: 1px solid color-mix(in oklch, var(--gold) 66%, transparent);
+        border-radius: 10px;
+        color: color-mix(in oklch, var(--gold) 88%, var(--paper));
+        background: color-mix(in oklch, var(--ink-deep) 62%, transparent);
+        box-shadow: inset 0 -4px 0 color-mix(in oklch, var(--gold) 16%, transparent);
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+
+      .orientation-note strong {
+        display: block;
+        margin-bottom: 3px;
+        color: color-mix(in oklch, var(--gold) 90%, var(--paper));
+        font-size: clamp(0.86rem, 2.2vw, 1rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .orientation-note span {
+        display: block;
+        color: color-mix(in oklch, var(--paper) 90%, var(--paper-soft));
+        font-size: clamp(0.9rem, 2.35vw, 1.04rem);
+        line-height: 1.35;
+      }
+
+      .return-nav {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
+        margin-top: clamp(-4px, 0.4vw, 4px);
+      }
+
+      .video-card {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+
+      .return-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 0 6px;
+        border-radius: 4px;
+        color: color-mix(in oklch, var(--paper-soft) 78%, var(--gold));
+        font-size: clamp(0.82rem, 1.8vw, 0.94rem);
+        font-weight: 700;
+        text-decoration: none;
+        text-underline-offset: 0.28em;
+        opacity: 0.72;
+        transition: color 160ms ease, opacity 160ms ease;
+      }
+
+      .return-link:hover {
+        color: color-mix(in oklch, var(--gold) 88%, var(--paper));
+        opacity: 1;
+      }
+
+      .return-link:focus-visible {
+        outline: 3px solid color-mix(in oklch, var(--gold) 70%, white);
+        outline-offset: 4px;
+      }
+
+      .video-card {
+        position: relative;
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        padding: clamp(10px, 2.4vw, 16px);
+        border: 1px solid color-mix(in oklch, var(--gold) 42%, transparent);
+        border-radius: 18px;
+        background:
+          linear-gradient(135deg, color-mix(in oklch, var(--paper) 6%, transparent), transparent 34%),
+          color-mix(in oklch, var(--ink) 84%, black);
+        box-shadow:
+          0 24px 60px var(--shadow),
+          inset 0 0 0 1px color-mix(in oklch, white 8%, transparent);
+      }
+
+      .video-card::before {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border: 1px solid color-mix(in oklch, var(--gold-soft) 28%, transparent);
+        border-radius: 13px;
+        pointer-events: none;
+      }
+
+      .video-frame {
+        position: relative;
+        width: min(100%, calc(80dvh * 9 / 16));
+        max-width: 420px;
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        border: 1px solid color-mix(in oklch, var(--gold) 50%, transparent);
+        border-radius: 12px;
+        background:
+          radial-gradient(circle at 50% 36%, color-mix(in oklch, var(--gold) 13%, transparent), transparent 42%),
+          linear-gradient(180deg, color-mix(in oklch, var(--burgundy) 42%, var(--ink)), var(--ink-deep));
+        box-shadow:
+          inset 0 0 0 1px color-mix(in oklch, white 7%, transparent),
+          0 18px 34px var(--shadow);
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        object-fit: contain;
+      }
+
+      .missing-video {
+        position: absolute;
+        inset: auto 14px 14px;
+        display: grid;
+        gap: 4px;
+        padding: 12px;
+        border: 1px solid color-mix(in oklch, var(--gold) 40%, transparent);
+        border-radius: 10px;
+        background: color-mix(in oklch, var(--ink-deep) 82%, black);
+        box-shadow: 0 12px 24px var(--shadow);
+        text-align: center;
+        font-size: clamp(0.85rem, 2.4vw, 1rem);
+      }
+
+      .missing-video[hidden] {
+        display: none;
+      }
+
+      .missing-video a {
+        color: color-mix(in oklch, var(--gold) 90%, var(--paper));
+        font-weight: 800;
+      }
+
+      .fullscreen-hint {
+        margin: -2px 0 0;
+        color: color-mix(in oklch, var(--paper-soft) 82%, var(--paper));
+        font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+        line-height: 1.35;
+        opacity: 0.82;
+        text-align: center;
+      }
+
+      .fullscreen-hint[hidden] {
+        display: none;
+      }
+
+      @media (orientation: portrait), (max-width: 760px) {
+        body {
+          align-items: start;
+          padding-top: max(16px, env(safe-area-inset-top));
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        main {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 16px;
+          justify-items: center;
+          text-align: center;
+        }
+
+        .case-copy {
+          justify-items: center;
+          gap: 10px;
+          max-width: min(100%, 31rem);
+        }
+
+        .return-link {
+          justify-self: center;
+        }
+
+        .return-nav {
+          grid-column: auto;
+          grid-row: auto;
+          justify-self: center;
+        }
+
+        .video-card {
+          grid-column: auto;
+          grid-row: auto;
+          width: min(100%, 430px);
+        }
+
+        .video-frame {
+          width: min(100%, calc(72dvh * 9 / 16));
+        }
+      }
+
+      @media (orientation: landscape) and (max-height: 520px) {
+        body {
+          padding: 12px max(12px, env(safe-area-inset-right)) 12px max(12px, env(safe-area-inset-left));
+        }
+
+        body::before,
+        body::after {
+          inset: 10px;
+        }
+
+        main {
+          grid-template-columns: minmax(0, 0.95fr) minmax(180px, 0.55fr);
+          gap: 14px;
+        }
+
+        h1 {
+          font-size: clamp(1.8rem, 7vmin, 2.8rem);
+        }
+
+        .intro,
+        .orientation-note {
+          font-size: clamp(0.82rem, 2.8vmin, 0.98rem);
+          line-height: 1.28;
+        }
+
+        .orientation-note {
+          gap: 8px;
+          padding: 9px 10px;
+        }
+
+        .orientation-note::before {
+          width: 28px;
+          height: 40px;
+          border-radius: 8px;
+          font-size: 1.15rem;
+        }
+
+        .orientation-note strong {
+          font-size: clamp(0.7rem, 2.2vmin, 0.82rem);
+        }
+
+        .orientation-note span {
+          font-size: clamp(0.78rem, 2.35vmin, 0.9rem);
+          line-height: 1.25;
+        }
+
+        .return-link {
+          min-height: 38px;
+          font-size: 0.8rem;
+        }
+
+        .video-card {
+          padding: 8px;
+        }
+
+        .video-frame {
+          width: min(100%, calc(82dvh * 9 / 16));
+          max-height: calc(100dvh - 42px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-label="Evidence of Love final video">
+      <section class="case-copy" aria-labelledby="evidence-title">
+        <p class="orientation-note"><span><strong>Best watched vertically</strong> Please turn your phone upright for the best experience.</span></p>
+        <p class="kicker">Final file</p>
+        <h1 id="evidence-title">Evidence of Love</h1>
+        <p class="intro">One final file was collected quietly, from people who wanted to be with you today.</p>
+      </section>
+
+      <section class="video-card" aria-label="Birthday collage video">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" aria-label="Evidence of Love birthday video">
+            <source type="video/mp4" />
+            The final video file is not available yet.
+          </video>
+          <p class="missing-video" hidden>
+            <span>The final video file is not available yet.</span>
+            <span>Please check the final media file and try again.</span>
+          </p>
+        </div>
+        <p class="fullscreen-hint" hidden>Use the fullscreen button if you prefer.</p>
+      </section>
+
+      <nav class="return-nav" aria-label="Return navigation">
+        <a class="return-link" href="https://game.stellamarislabs.net">Return to the Case Archive</a>
+      </nav>
+    </main>
+
+    <script>
+      const EVIDENCE_VIDEO_SRC = "https://media.stellamarislabs.net/videos/evidence-of-love.mp4";
+      const EVIDENCE_VIDEO_POSTER = "";
+      const EVIDENCE_VIDEO_BACKUP_URL = "";
+      const video = document.querySelector("video");
+      const source = document.querySelector("video source");
+      const missingVideo = document.querySelector(".missing-video");
+      const fullscreenHint = document.querySelector(".fullscreen-hint");
+      let fullscreenAttempted = false;
+      const showMissingVideo = () => {
+        if (missingVideo) {
+          missingVideo.hidden = false;
+        }
+      };
+      const showFullscreenHint = () => {
+        if (fullscreenHint) {
+          fullscreenHint.hidden = false;
+        }
+      };
+      const requestFullscreenIfAvailable = () => {
+        if (!video || fullscreenAttempted) {
+          return;
+        }
+
+        fullscreenAttempted = true;
+
+        try {
+          if (typeof video.requestFullscreen === "function") {
+            const request = video.requestFullscreen();
+            if (request && typeof request.catch === "function") {
+              request.catch(showFullscreenHint);
+            }
+            return;
+          }
+
+          if (typeof video.webkitEnterFullscreen === "function") {
+            video.webkitEnterFullscreen();
+            return;
+          }
+        } catch {
+          showFullscreenHint();
+          return;
+        }
+
+        showFullscreenHint();
+      };
+      const handleVideoPlayIntent = () => {
+        if (!video || !EVIDENCE_VIDEO_SRC) {
+          return;
+        }
+
+        try {
+          const playRequest = video.paused ? video.play() : undefined;
+          if (playRequest && typeof playRequest.catch === "function") {
+            playRequest.catch(showFullscreenHint);
+          }
+        } catch {
+          showFullscreenHint();
+        }
+
+        requestFullscreenIfAvailable();
+      };
+
+      if (EVIDENCE_VIDEO_POSTER && video) {
+        video.poster = EVIDENCE_VIDEO_POSTER;
+      }
+
+      if (EVIDENCE_VIDEO_SRC && source && video) {
+        source.src = EVIDENCE_VIDEO_SRC;
+        video.load();
+      } else {
+        showMissingVideo();
+      }
+
+      if (EVIDENCE_VIDEO_BACKUP_URL && missingVideo) {
+        const backupLink = document.createElement("a");
+        backupLink.href = EVIDENCE_VIDEO_BACKUP_URL;
+        backupLink.textContent = "Open the backup video link";
+        backupLink.rel = "noopener";
+        missingVideo.appendChild(backupLink);
+      }
+
+      video?.addEventListener("error", showMissingVideo);
+      video?.addEventListener("click", handleVideoPlayIntent);
+      video?.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          handleVideoPlayIntent();
+        }
+      });
+      source?.addEventListener("error", showMissingVideo);
+    </script>
+  </body>
+</html>

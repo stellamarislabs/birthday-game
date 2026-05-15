@@ -489,7 +489,10 @@ test("mobile landscape chapter, VN, puzzle, verdict, and credits screens stay in
   await expect(page.locator('[data-testid="evidence-love-title"]')).toContainText("Evidence of Love Unlocked");
   await expectNoTouchControls(page);
   await expect(page.locator('[data-testid="open-evidence-love"]')).toBeInViewport();
-  await expect(page.locator('[data-testid="open-evidence-love"]')).toHaveAttribute("data-video-target", /video\.html$/);
+  await expect(page.locator('[data-testid="open-evidence-love"]')).toHaveAttribute(
+    "data-video-target",
+    "https://evidence.stellamarislabs.net"
+  );
   await expect(page.locator('[data-testid="final-back-title"]')).toBeInViewport();
   await expect(page.locator('[data-testid="final-level-select"]')).toHaveCount(0);
   await expect(page.locator('[data-testid="final-credits"]')).toHaveCount(0);
@@ -1096,7 +1099,10 @@ test("Chapter 6 final puzzle reaches the unchanged verdict boundary", async ({ p
   await expect(page.locator('[data-testid="evidence-love-unlocked"]')).toBeVisible();
   await expect(page.locator('[data-testid="case-closed-message"]')).toContainText("Case closed. Love confirmed.");
   await expect(page.locator('[data-testid="evidence-love-title"]')).toContainText("Evidence of Love Unlocked");
-  await expect(page.locator('[data-testid="open-evidence-love"]')).toHaveAttribute("data-video-target", /video\.html$/);
+  await expect(page.locator('[data-testid="open-evidence-love"]')).toHaveAttribute(
+    "data-video-target",
+    "https://evidence.stellamarislabs.net"
+  );
   await expect(page.locator('[data-testid="final-back-title"]')).toBeVisible();
   await expect(page.locator('[data-testid="final-level-select"]')).toHaveCount(0);
   await expect(page.locator('[data-testid="final-credits"]')).toHaveCount(0);

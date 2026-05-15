@@ -1,5 +1,17 @@
 # Changelog
 
+## Part 59B - External Evidence of Love handoff
+
+- Updated the in-game `Open Evidence of Love` action to navigate same-tab to `https://evidence.stellamarislabs.net` instead of local `video.html`.
+- Preserved the post-verdict completion save, Evidence of Love bonus screen, and final-theme music stop before navigation.
+- Kept `public/video.html` and the standalone `evidence-site` export untouched while updating unit and e2e expectations for the external domain handoff.
+
+## Part 59A - Standalone Evidence of Love site export
+
+- Added a self-contained `evidence-site/index.html` export based on the current Evidence of Love video page for separate Cloudflare Pages hosting.
+- Inlined the R2-hosted video URL and changed the return link to `https://game.stellamarislabs.net` without touching the game `public/video.html`.
+- Added static tests to guard against pulling in the game shell, rotate overlay, PWA manifest, or Vite-only dependencies.
+
 ## Part 58A-R1 - PWA guidance inside Landscape First
 
 - Added compact Add to Home Screen guidance inside the portrait Landscape First overlay so mobile browser users see install instructions before rotating.
