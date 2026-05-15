@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import { shouldShowPwaInstallGuidance } from "../ui/pwaOnboarding";
 
 const root = resolve(fileURLToPath(new URL("../..", import.meta.url)));
 
@@ -50,9 +51,18 @@ describe("PWA install support", () => {
 
   it("includes the mobile Home Screen onboarding copy", () => {
     const onboardingSource = readProjectFile("src/ui/pwaOnboarding.ts");
+    const indexHtml = readProjectFile("index.html");
 
     expect(onboardingSource).toContain("Best played from your Home Screen");
     expect(onboardingSource).toContain("Continue in browser");
     expect(onboardingSource).toContain("display-mode: standalone");
+    expect(indexHtml).toContain('data-testid="rotate-pwa-guidance"');
+    expect(indexHtml).toContain("For the smoothest full-screen experience");
+  });
+
+  it("shows install guidance for touch browser mode but suppresses standalone and desktop contexts", () => {
+    expect(shouldShowPwaInstallGuidance(true, false)).toBe(true);
+    expect(shouldShowPwaInstallGuidance(true, true)).toBe(false);
+    expect(shouldShowPwaInstallGuidance(false, false)).toBe(false);
   });
 });

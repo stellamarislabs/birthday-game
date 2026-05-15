@@ -1,5 +1,11 @@
 # Changelog
 
+## Part 58A-R1 - PWA guidance inside Landscape First
+
+- Added compact Add to Home Screen guidance inside the portrait Landscape First overlay so mobile browser users see install instructions before rotating.
+- Updated PWA onboarding detection to expose compact guidance for touch browser mode even if the larger landscape hint was previously dismissed.
+- Kept standalone/fullscreen PWA launches, desktop, and `video.html` free of install guidance.
+
 ## Part 58A - PWA install support and mobile best-experience hint
 
 - Added a web app manifest, install icons, game-page PWA metadata, and a minimal production-only service worker so Android can install the game as an app-like experience.

@@ -740,6 +740,49 @@ body.final-image-active #game-container canvas {
   text-transform: uppercase;
 }
 
+.rotate-pwa-guidance {
+  display: none;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 12px;
+  border: 1px solid color-mix(in oklch, var(--gold) 48%, transparent);
+  border-radius: 10px;
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in oklch, var(--gold) 13%, transparent), transparent 58%),
+    linear-gradient(180deg, color-mix(in oklch, var(--rose) 18%, var(--ink)) 0%, color-mix(in oklch, var(--ink-deep) 88%, black) 100%);
+  box-shadow:
+    0 14px 34px color-mix(in oklch, black 36%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, var(--paper) 6%, transparent);
+  text-align: left;
+}
+
+html[data-pwa-install-guidance="visible"] .rotate-pwa-guidance {
+  display: grid;
+}
+
+.rotate-pwa-guidance p {
+  font-size: clamp(0.78rem, 3.2vw, 0.98rem);
+  line-height: 1.32;
+}
+
+.rotate-pwa-title {
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rotate-pwa-steps {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid color-mix(in oklch, var(--gold) 28%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--paper) 8%, transparent);
+  color: color-mix(in oklch, var(--paper) 84%, var(--gold));
+  font: 700 clamp(0.68rem, 2.8vw, 0.82rem)/1.28 Georgia, "Palatino Linotype", "Times New Roman", serif;
+}
+
 @media (orientation: portrait) and (max-width: 900px) {
   #rotate-overlay {
     display: grid;

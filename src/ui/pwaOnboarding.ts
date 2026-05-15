@@ -18,6 +18,10 @@ export function isStandaloneDisplayMode(): boolean {
   return standaloneMedia || fullscreenMedia || iosStandalone;
 }
 
+export function shouldShowPwaInstallGuidance(isTouchDevice: boolean, isStandaloneMode: boolean): boolean {
+  return isTouchDevice && !isStandaloneMode;
+}
+
 function wasPwaHintDismissed(): boolean {
   try {
     return window.localStorage.getItem(PWA_HINT_STORAGE_KEY) === "true";
@@ -37,7 +41,10 @@ function dismissPwaHint(root: HTMLElement): void {
 }
 
 export function initPwaOnboarding(): void {
-  if (!isTouchLikeDevice() || isStandaloneDisplayMode() || wasPwaHintDismissed()) {
+  const shouldShowInstallGuidance = shouldShowPwaInstallGuidance(isTouchLikeDevice(), isStandaloneDisplayMode());
+  document.documentElement.dataset.pwaInstallGuidance = shouldShowInstallGuidance ? "visible" : "hidden";
+
+  if (!shouldShowInstallGuidance || wasPwaHintDismissed()) {
     return;
   }
 
