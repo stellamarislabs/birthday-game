@@ -1,0 +1,41 @@
+export const THEME_HEX = {
+  midnightNavy: "#0B1220",
+  deepBlueNavy: "#121C2E",
+  panelNavy: "#182338",
+  mainCream: "#F1E3C8",
+  softParchment: "#E6D3B0",
+  mutedWarmText: "#BFAE92",
+  disabledText: "#8F816D",
+  antiqueGold: "#C79A3B",
+  deepGold: "#A87722",
+  brassHighlight: "#E2B45B",
+  burgundy: "#6B1F24",
+  richWineRed: "#7E2A30",
+  roseAccent: "#9B3A46",
+  darkRedShadow: "#3E1518",
+  leatherBrown: "#5A3926",
+  warmInkBrown: "#3A2419",
+  softIvory: "#F6EBD8",
+  silver: "#D5D8DE",
+  blueRibbon: "#365B8C"
+} as const;
+
+export const PHASER_THEME = {
+  midnightNavy: 0x0b1220,
+  deepBlueNavy: 0x121c2e,
+  panelNavy: 0x182338,
+  mainCream: 0xf1e3c8,
+  softParchment: 0xe6d3b0,
+  mutedWarmText: 0xbfae92,
+  antiqueGold: 0xc79a3b,
+  deepGold: 0xa87722,
+  brassHighlight: 0xe2b45b,
+  burgundy: 0x6b1f24,
+  richWineRed: 0x7e2a30,
+  roseAccent: 0x9b3a46,
+  leatherBrown: 0x5a3926,
+  warmInkBrown: 0x3a2419,
+  softIvory: 0xf6ebd8,
+  silver: 0xd5d8de,
+  blueRibbon: 0x365b8c
+} as const;
