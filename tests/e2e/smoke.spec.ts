@@ -802,6 +802,16 @@ test("final verdict and portrait fallback remain viewport-safe", async ({ page }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(page.locator("#rotate-overlay")).toBeVisible();
+  await page.locator("html").evaluate((element) => {
+    element.dataset.pwaInstallGuidance = "visible";
+  });
+  await expect(page.locator('[data-testid="rotate-pwa-guidance"]')).toBeVisible();
+  await expect(page.locator('[data-testid="rotate-landscape-note"]')).toBeVisible();
+  await expect(page.locator("#rotate-overlay")).toContainText("Best full-screen experience");
+  await expect(page.locator("#rotate-overlay")).toContainText("After adding it, open the case in landscape.");
+  expect(await page.locator("#rotate-overlay").textContent()).toMatch(
+    /Best full-screen experience[\s\S]*Landscape first/
+  );
   await expectNoDocumentScroll(page);
 });
 

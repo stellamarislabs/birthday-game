@@ -1,5 +1,11 @@
 # Changelog
 
+## Part 58A-R2 - Home Screen guidance first in portrait
+
+- Reordered the mobile portrait rotate overlay so Add to Home Screen guidance is the primary message before the landscape note.
+- Converted the old `Landscape first` copy into a smaller secondary instruction while preserving the portrait guard behavior.
+- Updated PWA and e2e coverage for the new portrait onboarding hierarchy.
+
 ## Part 59B - External Evidence of Love handoff
 
 - Updated the in-game `Open Evidence of Love` action to navigate same-tab to `https://evidence.stellamarislabs.net` instead of local `video.html`.

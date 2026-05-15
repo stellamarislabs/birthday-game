@@ -715,6 +715,7 @@ body.final-image-active #game-container canvas {
   display: none;
   place-items: center;
   padding: 24px;
+  overflow: auto;
   background: color-mix(in oklch, var(--ink-deep) 92%, black);
   color: var(--paper);
   text-align: center;
@@ -722,9 +723,10 @@ body.final-image-active #game-container canvas {
 }
 
 #rotate-overlay > div {
-  max-width: 24rem;
+  width: min(100%, 26rem);
+  max-width: 26rem;
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 #rotate-overlay p {
@@ -734,8 +736,8 @@ body.final-image-active #game-container canvas {
 }
 
 .rotate-kicker {
-  color: var(--gold);
-  font-size: 0.82rem;
+  color: color-mix(in oklch, var(--gold) 78%, var(--paper));
+  font-size: clamp(0.68rem, 2.6vw, 0.78rem);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -743,10 +745,9 @@ body.final-image-active #game-container canvas {
 .rotate-pwa-guidance {
   display: none;
   gap: 8px;
-  margin-top: 4px;
-  padding: 12px;
+  padding: clamp(12px, 4vw, 16px);
   border: 1px solid color-mix(in oklch, var(--gold) 48%, transparent);
-  border-radius: 10px;
+  border-radius: 12px;
   background:
     radial-gradient(ellipse at 50% 0%, color-mix(in oklch, var(--gold) 13%, transparent), transparent 58%),
     linear-gradient(180deg, color-mix(in oklch, var(--rose) 18%, var(--ink)) 0%, color-mix(in oklch, var(--ink-deep) 88%, black) 100%);
@@ -761,13 +762,14 @@ html[data-pwa-install-guidance="visible"] .rotate-pwa-guidance {
 }
 
 .rotate-pwa-guidance p {
-  font-size: clamp(0.78rem, 3.2vw, 0.98rem);
+  font-size: clamp(0.86rem, 3.6vw, 1.04rem);
   line-height: 1.32;
 }
 
 .rotate-pwa-title {
   color: var(--gold);
   font-weight: 800;
+  font-size: clamp(0.94rem, 4vw, 1.16rem) !important;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -781,6 +783,23 @@ html[data-pwa-install-guidance="visible"] .rotate-pwa-guidance {
   background: color-mix(in oklch, var(--paper) 8%, transparent);
   color: color-mix(in oklch, var(--paper) 84%, var(--gold));
   font: 700 clamp(0.68rem, 2.8vw, 0.82rem)/1.28 Georgia, "Palatino Linotype", "Times New Roman", serif;
+}
+
+.rotate-landscape-note {
+  display: grid;
+  gap: 5px;
+  padding: 8px 10px 0;
+  color: color-mix(in oklch, var(--paper) 74%, var(--paper-soft));
+  opacity: 0.84;
+}
+
+.rotate-landscape-note p {
+  font-size: clamp(0.78rem, 3vw, 0.94rem);
+  line-height: 1.28;
+}
+
+.rotate-landscape-note .rotate-kicker {
+  margin-bottom: 1px;
 }
 
 @media (orientation: portrait) and (max-width: 900px) {

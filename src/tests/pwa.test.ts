@@ -57,7 +57,17 @@ describe("PWA install support", () => {
     expect(onboardingSource).toContain("Continue in browser");
     expect(onboardingSource).toContain("display-mode: standalone");
     expect(indexHtml).toContain('data-testid="rotate-pwa-guidance"');
+    expect(indexHtml).toContain('data-testid="rotate-landscape-note"');
+    expect(indexHtml).toContain("Best full-screen experience");
     expect(indexHtml).toContain("For the smoothest full-screen experience");
+    expect(indexHtml).toContain("After adding it, open the case in landscape.");
+    expect(indexHtml).toContain("Or rotate your device to continue in browser.");
+    expect(indexHtml.indexOf('data-testid="rotate-pwa-guidance"')).toBeLessThan(
+      indexHtml.indexOf('data-testid="rotate-landscape-note"')
+    );
+    expect(indexHtml.indexOf("Best full-screen experience")).toBeLessThan(
+      indexHtml.indexOf("Landscape first")
+    );
   });
 
   it("shows install guidance for touch browser mode but suppresses standalone and desktop contexts", () => {
