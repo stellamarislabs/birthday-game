@@ -1,5 +1,11 @@
 # Changelog
 
+## Part 57A - Real mobile browser viewport sizing
+
+- Updated the app shell viewport helper to prefer `visualViewport.width` and `visualViewport.height`, publish `--app-width` / `--app-height`, and refresh on browser chrome, orientation, visibility, and viewport scroll changes.
+- Added a Phaser scale refresh hook so the fixed 960x540 canvas re-fits when mobile browser chrome changes the visible viewport.
+- Tightened the root game shell CSS to size against the visible viewport variables instead of relying on `100vh` for mobile landscape.
+
 ## Part 56I - Single-continue image-backed Case Filed reveals
 
 - Changed mapped image-backed Chapter 1-5 Case Filed reveal screens to save completion and open the Case Archive on the first continue input.
